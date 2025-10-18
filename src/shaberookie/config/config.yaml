@@ -1,0 +1,41 @@
+app:
+  name: "shaberookie"
+  log_level: "INFO"
+  log_dir: "logs"
+  conversation_log_path: "data/conversations"
+  profile_store_path: "data/profiles"
+  cache_ttl_seconds: 900
+  cache_backend: "memory"
+
+renshuu:
+  api_base: "https://api.renshuu.org/v1"
+  api_key: null
+  request_timeout_seconds: 10
+  retry:
+    max_attempts: 5
+    backoff_factor: 0.5
+    max_backoff_seconds: 10
+
+llm:
+  provider: "openai"
+  model: "gpt-4o-mini"
+  temperature: 0.7
+  max_tokens: 512
+  system_prompt_path: null
+  response_conformity_checks: true
+
+chat:
+  gradio:
+    host: "127.0.0.1"
+    port: 65535
+    share: false
+  console:
+    history_path: "data/console_history"
+
+storage:
+  redis_url: null
+  sqlite_path: "data/shaberookie.sqlite"
+
+metrics:
+  enabled: false
+  endpoint: null
